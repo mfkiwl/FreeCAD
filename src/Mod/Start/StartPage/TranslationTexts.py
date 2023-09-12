@@ -23,7 +23,6 @@ from PySide import QtGui
 
 
 def translate(context, text):
-
     "convenience function for the Qt translator"
 
     try:

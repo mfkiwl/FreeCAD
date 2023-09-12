@@ -54,7 +54,6 @@ defaulticon = None  # store a default icon for problematic file types
 
 
 def gethexcolor(color):
-
     "returns a color hex value #000000"
 
     r = str(hex(int(((color >> 24) & 0xFF))))[2:].zfill(2)
@@ -64,7 +63,6 @@ def gethexcolor(color):
 
 
 def isOpenableByFreeCAD(filename):
-
     "check if FreeCAD can handle this file type"
 
     if os.path.isdir(filename):
@@ -82,7 +80,6 @@ def isOpenableByFreeCAD(filename):
 
 
 def getInfo(filename):
-
     "returns available file information"
 
     global iconbank, tempfolder
@@ -128,7 +125,6 @@ def getInfo(filename):
         return None
 
     if os.path.exists(filename):
-
         if os.path.isdir(filename):
             return None
 
@@ -239,7 +235,6 @@ def getInfo(filename):
 
 
 def getDefaultIcon():
-
     "retrieves or creates a default file icon"
 
     global defaulticon
@@ -257,7 +252,6 @@ def getDefaultIcon():
 
 
 def build_new_file_card(template):
-
     """builds an html <li> element representing a new file
     quick start button"""
 
@@ -307,7 +301,6 @@ def build_new_file_card(template):
 
 
 def buildCard(filename, method, arg=None):
-
     """builds an html <li> element representing a file.
     method is a script + a keyword, for ex. url.py?key="""
 
@@ -344,7 +337,6 @@ def buildCard(filename, method, arg=None):
 
 
 def handle():
-
     "builds the HTML code of the start page"
 
     global iconbank, tempfolder
@@ -786,7 +778,6 @@ def handle():
 
 
 def exportTestFile():
-
     "Allow to check if everything is Ok"
 
     f = open(os.path.expanduser("~") + os.sep + "freecad-startpage.html", "w")
@@ -795,7 +786,6 @@ def exportTestFile():
 
 
 def postStart(switch_wb=True):
-
     "executes needed operations after loading a file"
 
     param = FreeCAD.ParamGet("User parameter:BaseApp/Preferences/Mod/Start")
@@ -829,7 +819,6 @@ def postStart(switch_wb=True):
 
 
 def checkPostOpenStartPage():
-
     "on Start WB startup, check if we are loading a file and therefore need to close the StartPage"
 
     import Start
